@@ -9,7 +9,7 @@ public class Propietario extends Persona {
     }
 
     public String toCSV() {
-        return documento + "," + nombres + "," + apellidos + "," + edad + "," + id_Propietario;
+        return id_Propietario + "," + nombres + "," + apellidos + "," + edad + "," + documento;
     }
 
 }
