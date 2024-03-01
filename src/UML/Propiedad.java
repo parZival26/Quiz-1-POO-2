@@ -1,3 +1,5 @@
+package UML;
+
 public class Propiedad {
     int id_Propiedad;
     String num_matricula;
@@ -5,5 +7,4 @@ public class Propiedad {
     String direccion;
     String descripcion;
 
-    
 }

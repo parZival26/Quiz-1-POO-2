@@ -1,3 +1,4 @@
+package UML;
 public class Inquilino extends Persona {
     int id_Inquilino;
 

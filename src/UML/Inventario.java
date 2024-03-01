@@ -1,3 +1,5 @@
+package UML;
+
 import java.util.Date;
 
 public class Inventario {

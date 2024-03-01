@@ -1,3 +1,5 @@
+package UML;
+
 public class Persona {
     int documento;
     String nombres;

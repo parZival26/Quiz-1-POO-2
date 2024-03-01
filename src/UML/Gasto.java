@@ -1,6 +1,8 @@
+package UML;
+
 import java.util.Date;
 
-public class Gasto{
+public class Gasto {
     int id_gasto;
     Date fecha;
     double valor;
