@@ -2,6 +2,8 @@ package IGU;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -11,8 +13,8 @@ public class FrmRegistro extends JFrame {
 
     JLabel lblDocumento, lblNombres, lblApellidos, lblEdad, lblIdPropietario;
     JTextField txtDocumento, txtNombres, txtApellidos, txtEdad, txtIdPropietario;
-    JButton btnRegistrar;
-    ImageIcon imgPen;
+    JButton btnRegistrar, btnRegresar;
+    ImageIcon imgPen, imgBack;
     JPanel panel;
 
     public FrmRegistro(FrmInicio frmInicio) {
@@ -23,40 +25,40 @@ public class FrmRegistro extends JFrame {
 
         // inputs
         lblDocumento = new JLabel("Documento");
-        lblDocumento.setBounds(10, 20, 80, 25);
+        lblDocumento.setBounds(10, 20, 50, 10);
         panel.add(lblDocumento);
-        txtDocumento = new JTextField(20);
+        txtDocumento = new JTextField(35);
         panel.add(txtDocumento);
 
         lblNombres = new JLabel("Nombres");
-        lblNombres.setBounds(10, 50, 80, 25);
+        lblNombres.setBounds(10, 50, 70, 25);
         panel.add(lblNombres);
-        txtNombres = new JTextField(20);
+        txtNombres = new JTextField(35);
         panel.add(txtNombres);
 
         lblApellidos = new JLabel("Apellidos");
-        lblApellidos.setBounds(10, 80, 80, 25);
+        lblApellidos.setBounds(10, 80, 70, 25);
         panel.add(lblApellidos);
-        txtApellidos = new JTextField(20);
+        txtApellidos = new JTextField(38);
         panel.add(txtApellidos);
 
         lblEdad = new JLabel("Edad");
-        lblEdad.setBounds(10, 110, 80, 25);
+        lblEdad.setBounds(10, 110, 70, 25);
         panel.add(lblEdad);
-        txtEdad = new JTextField(20);
+        txtEdad = new JTextField(38);
         panel.add(txtEdad);
 
         lblIdPropietario = new JLabel("Id Propietario");
-        lblIdPropietario.setBounds(10, 140, 80, 25);
+        lblIdPropietario.setBounds(10, 140, 70, 25);
         panel.add(lblIdPropietario);
-        txtIdPropietario = new JTextField(20);
+        txtIdPropietario = new JTextField(35);
         panel.add(txtIdPropietario);
 
         // Botones
 
         imgPen = new ImageIcon("./src/IGU/image/pen.png");
         btnRegistrar = new JButton("Registrar", imgPen);
-        btnRegistrar.setBounds(10, 180, 80, 25);
+        btnRegistrar.setBounds(100, 500, 80, 25);
         btnRegistrar.addActionListener(
                 e -> {
                     Propietario propietario = new Propietario(Integer.parseInt(txtDocumento.getText()),
@@ -79,6 +81,22 @@ public class FrmRegistro extends JFrame {
                     frmInicio.panel.repaint();
                 });
         panel.add(btnRegistrar);
+
+        imgBack = new ImageIcon("./src/IGU/image/back.png");
+        btnRegresar = new JButton("Regresar", imgBack);
+        btnRegresar.setBounds(300, 500, 80, 25);
+        btnRegresar.addActionListener(
+            new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                setVisible(false);
+                frmInicio.setVisible(true);
+
+            }
+        });
+
+
+        panel.add(btnRegresar);
 
         setTitle("Registrar Usuario");
         setSize(500, 600);
