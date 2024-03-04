@@ -3,7 +3,7 @@ package IGU;
 import java.io.File;
 import java.io.FileWriter;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener; 
 
 import javax.swing.*;
 
@@ -27,31 +27,31 @@ public class FrmRegistro extends JFrame {
         lblDocumento = new JLabel("Documento");
         lblDocumento.setBounds(10, 20, 50, 10);
         panel.add(lblDocumento);
-        txtDocumento = new JTextField(35);
+        txtDocumento = new JTextField(15);
         panel.add(txtDocumento);
 
         lblNombres = new JLabel("Nombres");
         lblNombres.setBounds(10, 50, 70, 25);
         panel.add(lblNombres);
-        txtNombres = new JTextField(35);
+        txtNombres = new JTextField(15);
         panel.add(txtNombres);
 
         lblApellidos = new JLabel("Apellidos");
-        lblApellidos.setBounds(10, 80, 70, 25);
+        lblApellidos.setBounds(80, 80, 70, 25);
         panel.add(lblApellidos);
-        txtApellidos = new JTextField(38);
+        txtApellidos = new JTextField(15);
         panel.add(txtApellidos);
 
         lblEdad = new JLabel("Edad");
         lblEdad.setBounds(10, 110, 70, 25);
         panel.add(lblEdad);
-        txtEdad = new JTextField(38);
+        txtEdad = new JTextField(15);
         panel.add(txtEdad);
 
         lblIdPropietario = new JLabel("Id Propietario");
         lblIdPropietario.setBounds(10, 140, 70, 25);
         panel.add(lblIdPropietario);
-        txtIdPropietario = new JTextField(35);
+        txtIdPropietario = new JTextField(15);
         panel.add(txtIdPropietario);
 
         // Botones
@@ -99,7 +99,7 @@ public class FrmRegistro extends JFrame {
         panel.add(btnRegresar);
 
         setTitle("Registrar Usuario");
-        setSize(500, 600);
+        setSize(500, 200);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
