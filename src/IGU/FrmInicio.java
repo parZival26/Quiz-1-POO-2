@@ -11,6 +11,8 @@ import UML.Propietario;
 
 public class FrmInicio extends JFrame {
 
+    static ImageIcon imgUsuario, imgLupa;
+    static JLabel lblUsuario;
     static JPanel panel;
     static JButton registrarPropietario, buscarPropietario;
     static ArrayList<Propietario> propietarios = new ArrayList<Propietario>();
@@ -22,7 +24,8 @@ public class FrmInicio extends JFrame {
         add(panel);
 
         // Botones
-        registrarPropietario = new JButton("Registrar Propietario");
+        imgUsuario = new ImageIcon("./src/IGU/image/Usuarios.png");
+        registrarPropietario = new JButton("Registrar Propietario ", imgUsuario);
         registrarPropietario.setBounds(100, 100, 10, 30);
         registrarPropietario.addActionListener(
                 new ActionListener() {
@@ -44,7 +47,8 @@ public class FrmInicio extends JFrame {
 
         panel.add(registrarPropietario);
 
-        buscarPropietario = new JButton("Buscar Propietario");
+        imgLupa = new ImageIcon("./src/IGU/image/lupa.png");
+        buscarPropietario = new JButton("Buscar Propietario ", imgLupa);
         buscarPropietario.setBounds(100, 150, 10, 30);
         buscarPropietario.addActionListener(
                 new ActionListener() {
@@ -76,12 +80,16 @@ public class FrmInicio extends JFrame {
             panel.add(mensaje);
         }
 
+        //Imagenes
+        
+
         // config ventana
         setTitle("Quiz 1");
         setSize(500, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
+        
     }
 
     public static void initialize() {
