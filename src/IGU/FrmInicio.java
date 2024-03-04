@@ -13,10 +13,10 @@ public class FrmInicio extends JFrame {
 
     static ImageIcon imgUsuario, imgLupa;
     static JLabel lblUsuario;
-    static JPanel panel;
+    JPanel panel;
     static JButton registrarPropietario, buscarPropietario;
     static ArrayList<Propietario> propietarios = new ArrayList<Propietario>();
-    static JScrollPane tablaPropietarios;
+    JScrollPane tablaPropietarios;
 
     public FrmInicio() {
         // Panel
@@ -31,16 +31,8 @@ public class FrmInicio extends JFrame {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        RegistrarPropietario.actionPerformed(e, propietarios);
-                        if (tablaPropietarios != null) {
-                            panel.remove(tablaPropietarios);
-                        }
-                        // Crear una nueva tabla y agregarla al panel
-                        tablaPropietarios = new FrmTabla().TablaPropietarios();
-                        panel.add(tablaPropietarios);
-                        // Actualizar el panel para mostrar la nueva tabla
-                        panel.revalidate();
-                        panel.repaint();
+                        setVisible(false);
+                        new FrmRegistro(FrmInicio.this);
 
                     }
                 });
@@ -80,8 +72,7 @@ public class FrmInicio extends JFrame {
             panel.add(mensaje);
         }
 
-        //Imagenes
-        
+        // Imagenes
 
         // config ventana
         setTitle("Quiz 1");
@@ -89,7 +80,7 @@ public class FrmInicio extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
-        
+
     }
 
     public static void initialize() {
